@@ -47,7 +47,7 @@
                 @endif
                     <td class="border">
                         @if( ($counter+1)%2 == 1 && (($counter+1) / $each_line) % 2 == 0 )
-                            <img class="seal" style="transform: rotate({{rand(0, 90)}}deg); transform-origin: {{ 75 + rand(-1, 1) }}% {{ 60 + rand(-1, 1) }}%;" src="{{ asset("images/seal.png") }}" >
+                            <img class="seal" style="transform: rotate({{rand(-90, 90)}}deg); transform-origin: {{ 75 + rand(-1, 1) }}% {{ 60 + rand(-1, 1) }}%;" src="{{ asset("images/seal.png") }}" >
                         @endif
                         <table style="border: 0">
                             <tr>
