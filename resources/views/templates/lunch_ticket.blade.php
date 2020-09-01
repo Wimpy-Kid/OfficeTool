@@ -13,6 +13,12 @@
         .container {
             page-break-after: always;
         }
+        .seal {
+            width: 150px;
+            position: absolute;
+            padding-left: 170px;
+            padding-top: 35px;
+        }
     </style>
 </head>
 <body>
@@ -27,6 +33,7 @@
                 $date_ = \Carbon\Carbon::createFromTimestamp(strtotime($date))->startOfMonth();
             @endphp
         <div class="container">
+
             <table class="" cellpadding="0 5 0 5">
             @for( $i = 0; $i < date('t', strtotime($date)); $i++)
                 @if(($date_->isWeekend() && !in_array($date_->toDateString(), $special_days[2]["date"])) || in_array($date_->toDateString(), $special_days[1]["date"]))
@@ -39,6 +46,9 @@
                     <tr class="border">
                 @endif
                     <td class="border">
+                        @if( ($counter+1)%2 == 1 && (($counter+1) / $each_line) % 2 == 0 )
+                            <img class="seal" style="transform: rotate({{rand(0, 90)}}deg); transform-origin: {{ 75 + rand(-1, 1) }}% {{ 60 + rand(-1, 1) }}%;" src="{{ asset("images/seal.png") }}" >
+                        @endif
                         <table style="border: 0">
                             <tr>
                                 <td rowspan="4" width="20%">
