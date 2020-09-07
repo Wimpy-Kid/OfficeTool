@@ -13,3 +13,5 @@ Homestead.json
 
 composer.lock
 package-lock.json
+
+/public/images/seal.png
